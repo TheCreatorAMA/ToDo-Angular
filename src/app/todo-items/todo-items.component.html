@@ -1,17 +1,22 @@
-<div class="row">
-    <div class="col-12">
-        
+<div class="container mt-2">
+    <div class="row mb-2">
+        <form [formGroup]="newItemForm" (ngSubmit)="onAddItem()" class="row">
+            <div class="col d-flex justify-content-center">
+                <button class="btn btn-primary">Add Item</button>
+            </div>
+            <div class="col-10">
+                <input type="text" class="form-control" id="newItem" formControlName="newItem">
+            </div>
+        </form>
     </div>
-</div>
-<div class="container">
-    <ul class="list-group">
+    <ul class="list-group" *ngFor="let item of items">
         <li class="list-group-item">
-            <div class="row d-flex ">
+            <div class="row d-flex">
                 <div class="col-3">
                     <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">Mark as done!
                 </div>
                 <div class="col-9">
-                    <p class="m-0">To do item</p>
+                    <p class="m-0">{{ item }}</p>
                 </div>
             </div>
         </li>
