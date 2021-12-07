@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Subscription } from "rxjs";
 import { TodoService } from "./todo-items.service";
 
@@ -23,7 +23,7 @@ export class TodoItemsComponent implements OnInit, OnDestroy {
         })
 
         this.newItemForm = new FormGroup({
-            'newItem': new FormControl(null)
+            'newItem': new FormControl(null, Validators.required)
         });
     }
 
@@ -33,5 +33,6 @@ export class TodoItemsComponent implements OnInit, OnDestroy {
 
     onAddItem() {
         this.todoService.addItem(this.newItemForm.get('newItem').value);
+        this.newItemForm.reset();
     }
 }

@@ -5,9 +5,10 @@
     </button>
     <div class="collapse navbar-collapse">
         <div class="navbar-nav">
-            <a href="#" class="nav-item nav-link active">Home</a>
-            <a href="#" class="nav-item nav-link active">Save</a>
-            <a href="#" class="nav-item nav-link active">Fetch</a>
+            <a class="nav-item nav-link" routerLink="/todo">Home</a>
+            <a class="nav-item nav-link" (click)="saveData()">Save</a>
+            <a class="nav-item nav-link" (click)="grabData()">Fetch</a>
+            <a class="nav-item nav-link" routerLink="/auth">Login</a>
         </div>
     </div>
 </nav>
