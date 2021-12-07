@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
 import { HeaderComponent } from './header/header.component';
 import { TodoItemsComponent } from './todo-items/todo-items.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     TodoItemsComponent,
-    AuthComponent
+    AuthComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

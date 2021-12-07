@@ -1,0 +1,32 @@
+.my-sidebar {
+    grid-area: sidebar;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.my-content {
+    grid-area: main;
+    border: 1px solid red;
+}
+
+.my-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "sidebar main"
+    ". main"
+    ". main"
+    ;
+}
+
+.user-profile {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(114, 105, 105, 0.712);
+    background-position: center center;
+    background-size: cover;
+    margin: 10px 0px 10px 0px;
+}
