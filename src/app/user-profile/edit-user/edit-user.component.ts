@@ -44,11 +44,8 @@ export class EditUserComponent implements OnInit {
 
     onEditUser() {
         const newSkills: string[] = this.userEditForm.value['skills'].map((element) => {
-            console.log(element);
             return element.skill;
-        })
-
-        console.log(newSkills);
+        });
 
         const updatedUser = new UserProfile(
             this.userEditForm.value['name'],
@@ -57,9 +54,10 @@ export class EditUserComponent implements OnInit {
             this.userEditForm.value['company'],
             newSkills);
 
-        // this.userService.updateUserDetails(updatedUser);
+        this.userService.updateUserDetails(updatedUser);
+        this.userService.saveUserData();
 
-        // this.router.navigate(['/profile'],{relativeTo: this.route});
+        this.router.navigate(['/profile'],{relativeTo: this.route});
     }
 
     onCancel() {
