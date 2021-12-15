@@ -1,10 +1,9 @@
 <div class="my-container">
     <div class="my-sidebar">
-        <div class="user-profile" style="background-image: url('/assets/images/doge.jpeg');">
-
-        </div>
+        <div class="user-profile" style="background-image: url('/assets/images/doge.jpeg');"></div>
+        <div><a (click)="onEditProfile()" style="color: blue; text-decoration: underline; cursor: pointer;">Edit Profile</a></div>
     </div>
     <div class="my-content">
-        <h1>my content</h1>
+        <router-outlet></router-outlet>
     </div>
 </div>

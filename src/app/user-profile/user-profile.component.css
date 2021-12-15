@@ -1,12 +1,10 @@
 .my-sidebar {
     grid-area: sidebar;
-    border: 1px solid black;
     text-align: center;
 }
 
 .my-content {
     grid-area: main;
-    border: 1px solid red;
 }
 
 .my-container {
@@ -28,5 +26,5 @@
     box-shadow: 0 0 2px rgba(114, 105, 105, 0.712);
     background-position: center center;
     background-size: cover;
-    margin: 10px 0px 10px 0px;
+    margin: 10% 0 0 0;
 }

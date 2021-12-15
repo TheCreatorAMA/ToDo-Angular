@@ -1,0 +1,41 @@
+<div class="card mt-5" style="width: 80%;">
+    <div class="card-header">
+        User Profile
+    </div>
+    <div class="card-body">
+        <form [formGroup]="userEditForm" (ngSubmit)="onEditUser()">
+            <div>
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="mt-2">
+                <label for="About" class="form-label">About</label>
+                <textarea class="form-control" rows="3" formControlName="about"></textarea>
+            </div>
+            <div class="row mt-2">
+                <div class="col-6">
+                    <label for="currentrole">Current Role</label>
+                    <input type="text" class="form-control" formControlName="role">
+                </div>
+                <div class="col-6">
+                    <label for="company">Company</label>
+                    <input type="text" class="form-control" formControlName="company">
+                </div>
+            </div>
+            <label class="mt-3" for="skills">Skills</label>
+            <div class="row mt-2">
+                <div class="col" formArrayName="skills">
+                    <div class="row" *ngFor="let skillCtrl of controls; let i = index" [formGroupName]="i">
+                        <input type="text" class="form-control" formControlName="skill">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="col-6"><button type="button" class="btn btn-primary" (click)="onAddSkills()">Add</button></div>
+            <div class="d-flex justify-content-center mt-3">
+                <button type="submit" class="btn btn-primary me-1">Save</button> 
+                <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
